@@ -1,0 +1,35 @@
+
+# 解决flask 1.x 线上环境切换
+
+# 程序运行入口文件
+FLASK_APP=run.py
+
+# 运行环境
+# 测试 development
+FLASK_ENV=production
+
+# 运行状态，
+# 生产环境必须为False
+FLASK_DEBUG=False
+
+
+
+## 邮件本地测试
+## python3 -m smtpd -n -c DebuggingServer localhost:8025
+#MAIL_PORT=8025
+#MAIL_SERVER=localhost
+#FLASK_DEBUG=False
+
+
+# 新建.env 文件
+
+## 数据库路径
+#DATABASE_URI=mysql+pymysql://microblog:my-microblog1234@localhost:3306/microblog
+#SECRET_KEY=fuoygkjfretysxhfgdr3239357sfghhg
+
+## 线上邮件
+#MAIL_SERVER=smtp.googlemail.com
+#MAIL_PORT=587
+#MAIL_USE_TLS=1
+#MAIL_USERNAME=gao
+#MAIL_PASSWORD=gap-password
