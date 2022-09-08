@@ -41,17 +41,19 @@ class BeWriterView(ResourceView):
         return self.resource(data=w.toDic())
 
 
-
 class PoemWritersView(ResourcesView):
     resourceFields = resource_fields
 
     def __init__(self):
         super().__init__()
         self.parse.add_argument('dynasty', type=str, required=False, trim=True, ignore=True)
+        self.parse.add_argument('kword', type=str, required=False, trim=True, ignore=True)
 
     def get(self):
         args = self.parse.parse_args()
         query = PoemWriter.query
+        if 'kword' in args.keys() and args['kword']:
+            query = query.filter(PoemWriter.writer.like("%{}%".format(args['kword'])))
         if 'dynasty' in args.keys() and args['dynasty']:
             query = query.filter(PoemWriter.dynasty == args['dynasty'])
         query = query.order_by(PoemWriter.createdAt.asc())
