@@ -35,12 +35,12 @@
 
 ***3.安装supervisor***
 * 确保程序的自动启动保活
-* apt-get supervisor
+* apt-get install supervisor
 * cd /etc/supervisor/conf.d
 * vim poemsServer.conf 添加以下
     - [program:poemsServer]
-    - command=/data/www/my_poemsServer/venv/bin/gunicorn -b 192.168.1.105:5000 -w 4 run:app
-    - directory=/data/www/my_poemsServer
+    - command=/root/www/PoemsServer/venv/bin/gunicorn -b 192.168.1.105:5000 -w 4 run:app
+    - directory=/root/www/PoemsServer
     - user=root
     - autostart=true
     - autorestart=true
