@@ -23,6 +23,7 @@ login = LoginManager()
 login.login_view = 'auth.login'
 login.login_message = '请登录'
 
+
 # CurrentConfig.GLOBAL_ENV = Environment(loader=FileSystemLoader("./templates/charts"))
 # import json, datetime
 # from datetime import date
@@ -63,5 +64,14 @@ def create_app(config_class=Config):
 
 
 app = create_app()
+
+
+# 跨域支持
+def after_request(resp):
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
+
+app.after_request(after_request)
 # 导入路由文件
 # 自上而下加载，未包含就不加载！！！
