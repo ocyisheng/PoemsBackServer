@@ -27,8 +27,8 @@ api.add_resource(comment.CommentsView, '/comments')
 api.add_resource(auth.UserRegisterView, '/auth/register')
 api.add_resource(auth.UserLoginView, '/auth/login')
 api.add_resource(auth.UserResetPasswordView, '/auth/reset')
-# api.add_resource(auth.UserLogoutView, '/auth/logout')
-# api.add_resource(auth.UserRefreshTokenView, '/auth/rftoken')
+api.add_resource(auth.UserLogoutView, '/auth/logout')
+api.add_resource(auth.UserRefreshTokenView, '/auth/rftoken')
 
 
 api.add_resource(user.UserLikePoemsView, '/user/likes')
