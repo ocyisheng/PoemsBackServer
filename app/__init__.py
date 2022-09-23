@@ -66,9 +66,12 @@ def create_app(config_class=Config):
 app = create_app()
 
 
+
+
 # 跨域支持
 def after_request(resp):
     resp.headers['Access-Control-Allow-Origin'] = '*'
+    resp.headers['Access-Control-Allow-Headers'] = 'Authorization'
     return resp
 
 
