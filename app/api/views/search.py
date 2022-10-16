@@ -13,7 +13,7 @@
 
 from flask_restful import fields
 from .. import  ResourcesView
-from ...models import Poem, PoemWriter, PoemStyle, PoemType
+from ...models import Poem, PoemWriter
 
 type_argument = {
     '1': 'title',
